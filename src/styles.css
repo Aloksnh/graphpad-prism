@@ -1,0 +1,76 @@
+@layer reset, theme, base, components, utilities;
+
+@import "tailwindcss";
+
+@theme {
+  --spacing: 0.25rem;
+  --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-lab-bg: #F6F8FA;
+  --color-lab-surface: #FFFFFF;
+  --color-lab-subtle: #EDF2F7;
+  --color-lab-ink: #0F172A;
+  --color-lab-ink-secondary: #334155;
+  --color-lab-ink-muted: #64748B;
+  --color-lab-rule: #CBD5E1;
+  --color-lab-cobalt: #0F4C81;
+  --color-lab-cobalt-soft: #E0F2FE;
+}
+
+:root {
+  --lab-bg: #F6F8FA;
+  --lab-surface: #FFFFFF;
+  --lab-subtle: #EDF2F7;
+  --lab-ink: #0F172A;
+  --lab-ink-secondary: #334155;
+  --lab-ink-muted: #64748B;
+  --lab-rule: #CBD5E1;
+  --lab-cobalt: #0F4C81;
+}
+
+@layer base {
+  html {
+    background-color: #F6F8FA;
+    color: #0F172A;
+    color-scheme: light;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: #F6F8FA;
+    color: #0F172A;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    border-color: #CBD5E1;
+  }
+}
+
+.lab-micrometer-grid {
+  background-color: #F6F8FA;
+  background-image:
+    linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.lab-fine-dots {
+  background-image: radial-gradient(rgba(15, 76, 129, 0.16) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
